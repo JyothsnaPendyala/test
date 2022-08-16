@@ -39,9 +39,4 @@ pipeline{
         }
         
     }
-    post{
-        always{
-            emailext body:"summary", subject: "Pipeline Status", to: 'Jyothsna.Pendyala@cloudangles.com'
-        }
-    }
-}
+   
