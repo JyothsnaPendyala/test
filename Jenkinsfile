@@ -9,7 +9,7 @@ pipeline{
         }
         stage("build"){
             steps{
-                git branch: 'main', credentialsId: 'ef70b0d3-000a-4c42-a98f-d2c045e33251', url: 'https://github.com/Jyothsna9999/bank-term-deposit-prediction.git'
+                git branch: 'main', credentialsId: 'ef70b0d3-000a-4c42-a98f-d2c045e33251', url: 'https://github.com/JyothsnaPendyala/bank-term-deposit-prediction.git'
             }
         }
         stage("load_data"){
