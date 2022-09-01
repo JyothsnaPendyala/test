@@ -6,6 +6,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 import pandas as pd
+import pickle
 def model_selection():
     data = pd.read_csv('balanced_data.csv')
     X = data.drop(['y_new'],axis=1)
