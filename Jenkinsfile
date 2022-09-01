@@ -40,8 +40,11 @@ pipeline{
         
     }
     post{
-        always{
+        '''always{
             emailext body:"summary", subject: "Pipeline Status", to: 'Jyothsna.Pendyala@cloudangles.com'
+        }'''
+        always {
+            archiveArtifacts artifacts: 'finalised_model.pkl', onlyIfSuccessful: true
         }
     }
 }
