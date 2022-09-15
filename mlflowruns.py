@@ -127,4 +127,5 @@ if __name__ == "__main__":
         mlflow.sklearn.log_model(dt,"Decision_Tree")
         mlflow.sklearn.log_model(rt,"Random_Forest")
         mlflow.sklearn.log_model(lr,"Logistic_Regression")
-    
+   
+os.system("mlflow server --host 0.0.0.0")
