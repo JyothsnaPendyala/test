@@ -53,7 +53,7 @@ pipeline{
                 sh "aws s3 mb s3://mlops-storage1"
                 sh "aws s3 cp addressbook_main/target/finalised_model.pkl s3://mlops-storage1"
         }
-    }catch(err){
+    } catch(err){
         sh "echo error"
     }
 }
