@@ -47,7 +47,10 @@ pipeline{
     post{
        
         always {
-            archiveArtifacts artifacts: 'reference.csv', 'finalised_model.pkl', onlyIfSuccessful: true
+            archiveArtifacts artifacts: 'finalised_model.pkl', onlyIfSuccessful: true
+        }
+        always {
+            archiveArtifacts artifacts: 'reference.csv', onlyIfSuccessful: true
         }
     }
     
