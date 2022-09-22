@@ -50,12 +50,7 @@ pipeline{
             archiveArtifacts artifacts: 'finalised_model.pkl', onlyIfSuccessful: true
         }
     }
-    post{
-       
-        always {
-            archiveArtifacts artifacts: 'reference.csv', onlyIfSuccessful: true
-        }
-    }
+
     
 
 }
