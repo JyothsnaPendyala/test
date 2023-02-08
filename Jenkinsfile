@@ -43,13 +43,8 @@ pipeline{
             }
         }
  
-    }
-    post{
-       
-        always {
-            archiveArtifacts artifacts: 'finalised_model.pkl', onlyIfSuccessful: true
-        }
-    }
+    
+   
     stage("upload_artifacts_to_s3"){
          withCredentials([<object of type com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding>]) {
            sh "aws s3 mb s3://jenkins-artifacts"
@@ -58,5 +53,5 @@ pipeline{
     }
 
     
-
+    }
 }
