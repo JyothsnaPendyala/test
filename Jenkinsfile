@@ -42,16 +42,6 @@ pipeline{
                 sh 'python3 model_selection.py'
             }
         }
- 
-    
-   
-    stage("upload_artifacts_to_s3"){
-         withCredentials([<object of type com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding>]) {
-           sh "aws s3 mb s3://jenkins-artifacts"
-           sh "aws s3 cp finalised_model.pkl s3://jenkins-artifacts"
-}
-    }
-
     
     }
 }
