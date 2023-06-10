@@ -28,16 +28,7 @@ pipeline{
             }
         }
         
-        stage("data_preprocess"){
-            steps{
-                sh 'python3 data_preprocess.py'
-            }
-        }
-        stage("model_selection"){
-            steps{
-                sh 'python3 model_selection.py'
-            }
-        }
+       
     }
         post{
        
