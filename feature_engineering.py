@@ -33,6 +33,7 @@ def feature_engineering():
     for col in  bool_columns:
         df4[col+'_new']=df4[col].apply(lambda x : 1 if x == 'yes' else 0)
         df4.drop(col, axis=1, inplace=True)
-    return df4
+    dataset = df4.to_csv('bank_term_deposit_prediction_clean_data.csv')
+    return dataset
 
 feature_engineering()
