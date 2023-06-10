@@ -38,6 +38,11 @@ pipeline{
                 sh 'python3 model_selection.py'
             }
         }
-    
     }
+        post{
+       
+        always {
+            archiveArtifacts artifacts: 'Bigmart_Sales_cleaned_dataset.csv', onlyIfSuccessful: true
+        }
+            }
 }
