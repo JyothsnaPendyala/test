@@ -24,7 +24,7 @@ pipeline{
         post{
        
         always {
-            archiveArtifacts artifacts: 'Bigmart_Sales_cleaned_dataset.csv', onlyIfSuccessful: true
+            archiveArtifacts artifacts: 'bank_term_deposit_prediction_clean_data.csv', onlyIfSuccessful: true
         }
             }
 }
