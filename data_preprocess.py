@@ -16,6 +16,12 @@ def data_preprocess():
     print(categorical_features)
     for feature in categorical_features:
         print('The feature is {} and number of categories are {}'.format(feature,len(df[feature].unique())))
-    return df
+    #list of numerical features
+    numerical_features = [feature for feature in df.columns if ((df[feature].dtypes != 'O') & (feature not in ['y']))]
+    print('Number of numerical variables:', len(numerical_features))
+    #visualize the numerical variables
+    #df[numerical_features].head()
+    
+    return categorical_features, numerical_features
     
 data_preprocess()    
