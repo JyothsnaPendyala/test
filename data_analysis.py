@@ -1,6 +1,6 @@
-from loaddata import Load_Data
+from load_data import load_data
 def data_analysis():
-    dataset = Load_Data()
+    dataset = load_data()
    # Providing the details of data 
     print(dataset.columns)
     print(dataset.head())
