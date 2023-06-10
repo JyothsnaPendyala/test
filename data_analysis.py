@@ -1,11 +1,11 @@
-'''from load_data import load_data'''
-import numpy as np
-import pandas as pd
+from load_data import load_data
+'''import numpy as np
+import pandas as pd'''
 '''import seaborn as sns'''
 '''import matplotlib.pyplot as plt'''
 def data_analysis():
-    '''data = load_data()'''
-    data = pd.read_csv('bank.csv')
+    data = load_data()
+    #data = pd.read_csv('bank.csv')
     features_na = [features for features in data.columns if data[features].isnull().sum() > 0]
     for feature in features_na:
         print(feature, np.round(data[feature].isnull().mean()))
