@@ -1,11 +1,21 @@
-from sklearn.model_selection import train_test_split
-import numpy as np
+from load_data import load_data
 import pandas as pd
+import numpy as np
 def data_preprocess():
-    data = pd.read_csv('balanced_data.csv')
-    X = data.drop(['y_new'],axis=1)
-    y = data['y_new']
-    X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2, random_state=0)
+    df = load_data()
+    features_na = [features for features in df.columns if df[features].isnull().sum() > 0]
+    for feature in features_na:
+        print(feature, np.round(df[feature].isnull().mean()))
+    else:
+        print("no missing value found")
+    # Find Features with One Value
+    for column in df.columns:
+        print(column,df[column].nunique())
+    #Exploring the Categorical Features
+    categorical_features = [feature for feature in df.columns if ((df[feature].dtypes=='O') & (feature not in ['y']))]
+    print(categorical_features)
+    for feature in categorical_features:
+        print('The feature is {} and number of categories are {}'.format(feature,len(df[feature].unique())))
+    return df
     
-
 data_preprocess()    
