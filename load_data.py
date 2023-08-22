@@ -4,4 +4,4 @@ def load_data():
   print(data.head())
   return data
 
-load_data()
+print(load_data())
